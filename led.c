@@ -13,13 +13,13 @@ int main(void) {
     // loop
     while(1) {
         
-        // set PORTB5
+        // set PORTB7
         PORTB = PORTB | (1 << PORTB7);
 
         // wait
         _delay_ms(1000);
 
-        // unset PORTB5
+        // unset PORTB7
         PORTB = PORTB & ~(1 << PORTB7);
 
         // wait
