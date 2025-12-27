@@ -2,29 +2,9 @@
     #define __AVR_ATmega2560__
 #endif
 
-#include <avr/io.h>
-#include <util/delay.h>
+#include "embed_led/embed_led.h"
 
 int main(void) {
-
-    // set PORTB7 as output
-    DDRB = DDRB | (1 << DDB7);
-
-    // loop
-    while(1) {
-        
-        // set PORTB7
-        PORTB = PORTB | (1 << PORTB7);
-
-        // wait
-        _delay_ms(1000);
-
-        // unset PORTB7
-        PORTB = PORTB & ~(1 << PORTB7);
-
-        // wait
-        _delay_ms(1000);
-
-    }
-
+    init();
+    bounce_animation(500, 50, 2000);
 }
